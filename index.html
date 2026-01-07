@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Verma | Data Scientist & MLOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Sections General */
+        section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags span {
+            display: inline-block;
+            background-color: #334155;
+            color: var(--text-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.2rem;
+        }
+
+        /* Projects */
+        .project-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .project-links a {
+            color: var(--text-gray);
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .project-tech {
+            margin: 1rem 0;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        /* Timeline/Experience */
+        .timeline-item {
+            border-left: 2px solid var(--secondary);
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 5px;
+        }
+
+        .date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-card);
+            color: var(--text-gray);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Yash Verma</div> <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hello, I'm Yash Verma</h1> <p>M.Sc. Mathematics Student at IIT Delhi <br> 
+           Specializing in Data Science, MLOps, and Predictive Modeling </p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </header>
+
+    <section id="skills">
+        <h2>Technical Arsenal </h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-code"></i> Languages</h3>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Java</span>
+                    <span>C++</span>
+                    <span>LaTeX</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-layer-group"></i> Libraries</h3>
+                <div class="skill-tags">
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>Scikit-learn</span>
+                    <span>Flask</span>
+                    <span>Plotly</span>
+                    <span>Dash</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-tools"></i> MLOps & Tools</h3>
+                <div class="skill-tags">
+                    <span>MLflow</span>
+                    <span>DagsHub</span>
+                    <span>Docker</span>
+                    <span>Git</span>
+                    <span>Power BI</span>
+                    <span>GitHub Actions</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-square-root-alt"></i> Mathematics</h3>
+                <div class="skill-tags">
+                    <span>Probability</span>
+                    <span>Statistics</span>
+                    <span>Linear Algebra</span>
+                    <span>Optimization</span>
+                    <span>Calculus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects </h2>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">Wine Quality MLOps Pipeline </div>
+                <div class="project-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">MLflow | DagsHub | Flask | HTML/CSS</div> <p>
+                Architected a modular end-to-end MLOps workflow orchestrating a 5-stage pipeline (Ingestion to Evaluation) . 
+                Deployed a scalable Flask API for real-time inference with on-demand training endpoints .
+                Integrated a client-facing interface for visualizing real-time quality predictions .
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">Cyber Intelligence Dashboard </div>
+                <div class="project-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">Dash | Plotly | Pandas</div> <p>
+                Engineered a high-performance visualization tool to monitor global data breach trends .
+                Implemented complex callback logic for cross-filtering and state management .
+                Delivered a responsive "Cyborg-themed" interface with Sunburst charts and timeline analytics .
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">Modular Automated ML System </div>
+                <div class="project-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="project-tech">Python | Automation | Error Tracking</div> <p>
+                Built an automated workflow script that runs data gathering, processing, and training sequentially .
+                Implemented smart error tracking with custom logging to pinpoint failure origins .
+                Refactored code into a clean structure (Ingestion, Transformation, Training) .
+            </p>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+            
+            <div>
+                <h2>Education</h2>
+                <div class="timeline-item">
+                    <h3>M.Sc. in Mathematics </h3>
+                    <div class="date">2024 - Present | IIT Delhi </div>
+                    <p>CGPA: 7.2 <br> Coursework: Algebra, Probability, Real Analysis </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>B.Sc. (Hons.) Mathematics </h3>
+                    <div class="date">2021 - 2024 | Maharshi Dayanand University </div>
+                    <p>Score: 73.14% </p>
+                </div>
+            </div>
+
+            <div>
+                <h2>Achievements & Experience</h2>
+                <div class="timeline-item">
+                    <h3>AIR 176 - JAM </h3>
+                    <p>Joint Admission Test for Masters (2024)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1st Prize - Math Quiz </h3>
+                    <p>Inter-College Mathematics Quiz at YMCA University (2023)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Subject Matter Expert Intern </h3>
+                    <div class="date">June 2024 - Aug 2024</div>
+                    <p>Disha Publication, Delhi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Open to opportunities in Data Science and Machine Learning.</p>
+        <div style="margin-top: 1.5rem; font-size: 1.5rem;">
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fas fa-envelope"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem; color: #64748b;">&copy; 2024 Yash Verma. Built from Resume Data.</p>
+    </footer>
+
+</body>
+</html>

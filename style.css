@@ -3,31 +3,31 @@
    ============================================ */
 :root {
     /* Colors */
-    --primary: #f59e0b;       /* Amber */
-    --primary-light: #fbbf24;
-    --primary-dark: #b45309;
-    --secondary: #ec4899;     /* Pink */
-    --accent: #8b5cf6;
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --primary-dark: #4f46e5;
+    --secondary: #06b6d4;
+    --accent: #f59e0b;
     --success: #10b981;
     --danger: #ef4444;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
-    --gradient-accent: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     
     /* Dark Theme Backgrounds */
-    --bg-primary: #18181b;    /* Zinc 900 */
-    --bg-secondary: #27272a;  /* Zinc 800 */
-    --bg-card: rgba(39, 39, 42, 0.8);
+    --bg-primary: #0f0f1e;
+    --bg-secondary: #1a1a2e;
+    --bg-card: rgba(30, 30, 50, 0.8); /* Glass effect base */
     
     /* Text */
-    --text-primary: #fafafa;
-    --text-secondary: #e4e4e7;
-    --text-muted: #a1a1aa;
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
     
     /* Effects */
     --blur: 20px;
-    --shadow-glow: 0 0 40px rgba(245, 158, 11, 0.2);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

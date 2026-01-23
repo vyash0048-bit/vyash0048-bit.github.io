@@ -289,31 +289,32 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hero Visual (Profile Card) */
+/* ============================================
+   HERO VISUAL & PROFILE PHOTO (UPDATED)
+   ============================================ */
 .profile-card {
     position: relative;
-    width: 300px;
+    /* STRICTLY FORCE SIZE */
+    width: 300px;       
     height: 300px;
+    margin: 0 auto;
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
     position: relative;
+    border-radius: 50%;
 }
 
-.profile-placeholder {
+.profile-photo {
     width: 100%;
     height: 100%;
-    background: var(--bg-card);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: var(--primary);
+    object-fit: cover; /* Keeps aspect ratio */
+    border-radius: 50%; /* Circle */
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4); /* Glow */
+    display: block;
 }
 
 /* Floating Badges */
@@ -335,11 +336,10 @@ body {
     animation-delay: var(--delay);
 }
 
-/* Badge Positions around the circle */
-.tech-badge:nth-child(1) { top: -10px; left: 50%; transform: translateX(-50%); }
-.tech-badge:nth-child(2) { top: 40%; right: -20px; }
-.tech-badge:nth-child(3) { bottom: -10px; left: 50%; transform: translateX(-50%); }
-.tech-badge:nth-child(4) { top: 40%; left: -20px; }
+.tech-badge:nth-child(2) { top: -10px; left: 50%; transform: translateX(-50%); } /* Python */
+.tech-badge:nth-child(3) { top: 40%; right: -20px; } /* DB */
+.tech-badge:nth-child(4) { bottom: -10px; left: 50%; transform: translateX(-50%); } /* Brain */
+.tech-badge:nth-child(5) { top: 40%; left: -20px; } /* Chart */
 
 @keyframes floatBadge {
     0%, 100% { transform: translateY(0) translateX(0); }
@@ -485,15 +485,6 @@ section {
     transform: translateY(-10px);
     border-color: rgba(99, 102, 241, 0.5);
     box-shadow: var(--shadow-glow);
-}
-
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image covers the circle without stretching */
-    border-radius: 50%; /* Makes it circular */
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); /* Adds a subtle glow */
 }
 
 .card-icon {

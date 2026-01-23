@@ -266,3 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ============================================
+// SCROLL INDICATOR FADE
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    if (scrollIndicator) {
+        window.addEventListener('scroll', () => {
+            // If scrolled down more than 50px, add the fade-out class
+            if (window.scrollY > 50) {
+                scrollIndicator.classList.add('fade-out');
+            } else {
+                // Otherwise remove it (bring it back if at top)
+                scrollIndicator.classList.remove('fade-out');
+            }
+        });
+    }
+});

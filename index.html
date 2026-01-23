@@ -25,6 +25,10 @@
             font-family: 'Inter', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth; /* Adds smooth scrolling for nav links */
+        }
+
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
@@ -149,10 +153,15 @@
             margin-bottom: 2rem;
             border: 1px solid #334155;
             transition: transform 0.2s;
+            /* Ensure the anchor behaves like a block for layout */
+            display: block; 
+            text-decoration: none;
+            color: inherit;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent); /* Added highlight effect on hover */
         }
 
         .project-header {
@@ -167,7 +176,7 @@
             font-weight: 700;
         }
 
-        .project-links a {
+        .project-links i {
             color: var(--text-gray);
             margin-left: 1rem;
             font-size: 1.2rem;
@@ -215,14 +224,15 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Yash Verma</div> <div class="nav-links">
+        <div class="logo">Yash Verma</div> 
+        <div class="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
@@ -230,8 +240,9 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <h1>Hello, I'm Yash Verma</h1> <p>M.Sc. Mathematics Student at IIT Delhi <br> 
+    <header id="about" class="hero">
+        <h1>Hello, I'm Yash Verma</h1> 
+        <p>M.Sc. Mathematics Student at IIT Delhi <br> 
            Specializing in Data Science, MLOps, and Predictive Modeling </p>
         <a href="mailto:vyash0048@gmail.com?subject=Inquiry from Website" class="btn">Get In Touch</a>
     </header>
@@ -287,7 +298,7 @@
     <section id="projects">
         <h2>Featured Projects </h2>
 
-        <a href="https://github.com/vyash0048-bit/Wine-quality-Prediction-using-ML-with-MLops" class="project-card" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://github.com/vyash0048-bit/Wine-quality-Prediction-using-ML-with-MLops" class="project-card">
             <div class="project-header">
                 <div class="project-title">Wine Quality MLOps Pipeline </div>
                 <div class="project-links">
@@ -302,7 +313,7 @@
             </p>
         </a>
 
-        <a href="https://github.com/vyash0048-bit/Data-Beach-Dashboard-Using-Ploty-Dash" class="project-card" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://github.com/vyash0048-bit/ML-project-with-complete-MLops-pipeline" class="project-card">
             <div class="project-header">
                 <div class="project-title">Cyber Intelligence Dashboard </div>
                 <div class="project-links">
@@ -317,7 +328,7 @@
             </p>
         </a>
         
-        <a href="https://github.com/vyash0048-bit/ML-project-with-complete-MLops-pipeline" class="project-card" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://github.com/vyash0048-bit/Data-Beach-Dashboard-Using-Ploty-Dash" class="project-card">
             <div class="project-header">
                 <div class="project-title">Modular Automated ML System </div>
                 <div class="project-links">
@@ -335,7 +346,7 @@
     </section>
 
     <section id="achievements">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
             
             <div>
                 <h2>Education</h2>
@@ -375,7 +386,9 @@
         <p>Open to opportunities in Data Science and Machine Learning.</p>
         <div style="margin-top: 1.5rem; font-size: 1.5rem;">
             <a href="https://www.linkedin.com/in/yash-verma0048/" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-            <a href="vyash004@gmail.com" style="color: white; margin: 0 10px;"><i class="fas fa-envelope"></i></a>
+            
+            <a href="mailto:vyash0048@gmail.com" style="color: white; margin: 0 10px;"><i class="fas fa-envelope"></i></a>
+            
             <a href="https://github.com/vyash0048-bit" style="color: white; margin: 0 10px;"><i class="fab fa-github"></i></a>
         </div>
         <p style="margin-top: 2rem; font-size: 0.8rem; color: #64748b;">&copy; 2024 Yash Verma. Built from Resume Data.</p>

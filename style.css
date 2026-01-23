@@ -3,34 +3,33 @@
    ============================================ */
 :root {
     /* Colors */
-    --primary: #6366f1;
-    --primary-light: #818cf8;
-    --primary-dark: #4f46e5;
-    --secondary: #06b6d4;
+    --primary: #d946ef;       /* Neon Fuchsia */
+    --primary-light: #e879f9;
+    --primary-dark: #a21caf;
+    --secondary: #06b6d4;     /* Cyan */
     --accent: #f59e0b;
-    --success: #10b981;
+    --success: #22c55e;
     --danger: #ef4444;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-primary: linear-gradient(135deg, #d946ef 0%, #8b5cf6 100%);
+    --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
     
     /* Dark Theme Backgrounds */
-    --bg-primary: #0f0f1e;
-    --bg-secondary: #1a1a2e;
-    --bg-card: rgba(30, 30, 50, 0.8); /* Glass effect base */
+    --bg-primary: #000000;    /* Pure Black */
+    --bg-secondary: #0a0a0a;  /* Near Black */
+    --bg-card: rgba(20, 20, 20, 0.8);
     
     /* Text */
     --text-primary: #ffffff;
-    --text-secondary: #e2e8f0;
-    --text-muted: #94a3b8;
+    --text-secondary: #d4d4d8;
+    --text-muted: #71717a;
     
     /* Effects */
     --blur: 20px;
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
+    --shadow-glow: 0 0 40px rgba(217, 70, 239, 0.25);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* ============================================
    RESET & GLOBAL
    ============================================ */

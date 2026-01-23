@@ -182,7 +182,7 @@ body {
    ============================================ */
 .hero-section {
     min-height: 100vh;
-    padding-top: 60px; /* Offset for navbar */
+    padding-top: 60px;
     position: relative;
     display: flex;
     align-items: center;
@@ -352,18 +352,20 @@ body {
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
-    left: 50%;  /* Moves the left edge to the middle */
-    transform: translateX(-50%); /* CRITICAL: Pulls it back by half its width to perfectly center it */
+    left: 0;
+    width: 100%; /* Spans the full width of the screen */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Forces the text and line to the center */
+    justify-content: center;
     gap: 8px;
     font-size: 12px;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
+    z-index: 10;
     
-    /* Fade transition we added earlier */
+    /* Fade transition */
     transition: opacity 0.5s ease, visibility 0.5s;
     opacity: 1;
     visibility: visible;

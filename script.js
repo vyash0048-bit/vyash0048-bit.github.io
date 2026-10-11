@@ -150,6 +150,47 @@ class Typewriter {
 // ============================================
 const projects = [
     {
+        icon: 'fa-map-marked-alt',
+        title: 'Spatio-Temporal Latent Model | True Incidence vs Reporting Bias',
+        description: 'Research project (with Dr. Sumangal Bhattacharya, ISI Delhi, and Dr. Neeraj Joshi, IIT Delhi) on a Bayesian hierarchical model that separates the true incidence of sexual violence from under-reporting in NCRB data. Combines Poisson-Binomial thinning with ICAR spatial, AR(1) temporal, and interaction effects, with inference via NUTS in Stan.',
+        tags: ['Bayesian Hierarchical', 'Stan / NUTS', 'ICAR + AR(1)', 'Spatio-Temporal']
+    },
+    {
+        icon: 'fa-chart-line',
+        title: 'FinSight | AI Investment Research Platform',
+        description: 'AI-powered multi-agent investment research platform combining market data, technical indicators, fundamentals, and news sentiment. Orchestrates an autonomous agent debate to generate citation-backed research memos.',
+        tags: ['Multi-Agent', 'LangGraph', 'FastAPI', 'Docker'],
+        github: 'https://github.com/vyash0048-bit/finsight'
+    },
+    {
+        icon: 'fa-robot',
+        title: 'Corporate AI Assistant | Agentic RAG',
+        description: 'Enterprise multi-agent assistant for corporate intelligence. Combines RAG over narrative SEC 10-K filings with Text-to-SQL for financial analysis, evaluated with RAGAS (0.94 faithfulness).',
+        tags: ['Agentic RAG', 'LangGraph', 'Qdrant', 'FastAPI'],
+        github: 'https://github.com/vyash0048-bit/Rag-Business-Assistant'
+    },
+    {
+        icon: 'fa-university',
+        title: 'Customer Risk Intelligence | Credit Scorecard',
+        description: 'Enterprise credit risk intelligence system translating raw financial data into interpretable credit decisions using Weight of Evidence (WOE) modeling, Explainable AI (XAI), and PostgreSQL auditing on AWS.',
+        tags: ['WOE Modeling', 'Explainable AI', 'PostgreSQL', 'AWS EC2'],
+        github: 'https://github.com/vyash0048-bit/Customer_Risk'
+    },
+    {
+        icon: 'fa-comment-slash',
+        title: 'Toxic Comment Classifier',
+        description: 'An end-to-end ML pipeline detecting multi-label toxic comments in real-time. Built with Logistic Regression & BiLSTM (FastText embeddings), tracked with MLflow, and deployed on AWS EC2.',
+        tags: ['BiLSTM', 'MLflow', 'FastText', 'AWS EC2'],
+        github: 'https://github.com/vyash0048-bit/Toxic-Comment-Classifier'
+    },
+    {
+        icon: 'fa-credit-card',
+        title: 'Sentinel | Real-Time Fraud Detection',
+        description: 'End-to-end ML pipeline identifying fraudulent credit card transactions in real-time. Implements Kaggle 1st-place Magic Features with a tuned LightGBM classifier, served via FastAPI and tracked with DVC & MLflow.',
+        tags: ['LightGBM', 'FastAPI', 'DVC', 'MLflow'],
+        github: 'https://github.com/vyash0048-bit/Fraud_Detection'
+    },
+    {
         icon: 'fa-wine-glass-alt',
         title: 'Wine Quality MLOps Pipeline',
         description: 'Architected a modular end-to-end MLOps workflow orchestrating a 5-stage pipeline (Ingestion to Evaluation). Deployed a scalable Flask API for real-time inference.',
@@ -183,9 +224,11 @@ function renderProjects() {
     
     projects.forEach((project, index) => {
         // Create the anchor tag wrapper to make the whole card clickable
-        const cardLink = document.createElement('a');
-        cardLink.href = project.github;
-        cardLink.target = "_blank";
+        const cardLink = document.createElement(project.github ? 'a' : 'div');
+        if (project.github) {
+            cardLink.href = project.github;
+            cardLink.target = "_blank";
+        }
         cardLink.style.textDecoration = "none";
         cardLink.style.color = "inherit";
         cardLink.style.display = "block"; // Important for layout
@@ -207,8 +250,10 @@ function renderProjects() {
             <div class="card-tags">
                 ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
             </div>
-            <div class="card-link" style="margin-top: 15px;">
-                <i class="fab fa-github"></i> View Code
+           <div class="card-link" style="margin-top: 15px;">
+                ${project.github
+                    ? '<i class="fab fa-github"></i> View Code'
+                    : '<i class="fas fa-flask"></i> Research in Progress'}
             </div>
         `;
         

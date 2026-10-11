@@ -152,62 +152,62 @@ const projects = [
     {
         icon: 'fa-map-marked-alt',
         title: 'Spatio-Temporal Latent Model | True Incidence vs Reporting Bias',
-        description: 'Research project (with Dr. Sumangal Bhattacharya, ISI Delhi, and Dr. Neeraj Joshi, IIT Delhi) on a Bayesian hierarchical model that separates the true incidence of sexual violence from under-reporting in NCRB data. Combines Poisson-Binomial thinning with ICAR spatial, AR(1) temporal, and interaction effects, with inference via NUTS in Stan.',
+        description: 'Research project (with Dr. Sumangal Bhattacharya, ISI Delhi, and Dr. Neeraj Joshi, IIT Delhi) on a Bayesian hierarchical model that separates the true incidence of sexual violence from under-reporting in NCRB data. Combines Poisson-Binomial thinning with ICAR spatial, AR(1) temporal, and interaction effects, with NUTS inference in Stan. Simulation design: 50 regions × 20 periods, 4 reporting scenarios, 500 replicates each.',
         tags: ['Bayesian Hierarchical', 'Stan / NUTS', 'ICAR + AR(1)', 'Spatio-Temporal']
     },
     {
         icon: 'fa-chart-line',
         title: 'FinSight | AI Investment Research Platform',
-        description: 'AI-powered multi-agent investment research platform combining market data, technical indicators, fundamentals, and news sentiment. Orchestrates an autonomous agent debate to generate citation-backed research memos.',
+        description: 'AI-powered multi-agent investment research platform combining market data, technical indicators, fundamentals, and news sentiment. Orchestrates a debate among 7 specialized agents (technical, fundamental, news, macro, risk, debate, supervisor) to generate citation-backed research memos. Hybrid Postgres + MongoDB storage, CI pipeline, and live deployment on Render.',
         tags: ['Multi-Agent', 'LangGraph', 'FastAPI', 'Docker'],
         github: 'https://github.com/vyash0048-bit/finsight'
     },
     {
         icon: 'fa-robot',
         title: 'Corporate AI Assistant | Agentic RAG',
-        description: 'Enterprise multi-agent assistant for corporate intelligence. Combines RAG over narrative SEC 10-K filings with Text-to-SQL for financial analysis, evaluated with RAGAS (0.94 faithfulness).',
+        description: 'Enterprise multi-agent assistant for corporate intelligence. Combines RAG over narrative SEC 10-K filings (BGE-large embeddings + cross-encoder reranking) with Text-to-SQL for financial analysis. Evaluated with RAGAS: 0.94 faithfulness, 0.91 answer relevance, and 0.88 context precision.',
         tags: ['Agentic RAG', 'LangGraph', 'Qdrant', 'FastAPI'],
         github: 'https://github.com/vyash0048-bit/Rag-Business-Assistant'
     },
     {
         icon: 'fa-university',
         title: 'Customer Risk Intelligence | Credit Scorecard',
-        description: 'Enterprise credit risk intelligence system translating raw financial data into interpretable credit decisions using Weight of Evidence (WOE) modeling, Explainable AI (XAI), and PostgreSQL auditing on AWS.',
+        description: 'Enterprise credit risk system translating raw financial data into interpretable credit decisions with a Weight of Evidence (WOE) logistic scorecard on a 400-600 scale (600 = 50:1 odds, 20 points to double odds). Decision threshold tuned for F2 to prioritize recall on defaults, with 3-tier outcomes (approve / manual review / reject), XAI feature contributions, and PostgreSQL audit logging on AWS.',
         tags: ['WOE Modeling', 'Explainable AI', 'PostgreSQL', 'AWS EC2'],
         github: 'https://github.com/vyash0048-bit/Customer_Risk'
     },
     {
         icon: 'fa-comment-slash',
         title: 'Toxic Comment Classifier',
-        description: 'An end-to-end ML pipeline detecting multi-label toxic comments in real-time. Built with Logistic Regression & BiLSTM (FastText embeddings), tracked with MLflow, and deployed on AWS EC2.',
+        description: 'End-to-end ML pipeline detecting multi-label toxic comments in real time. BiLSTM (FastText embeddings) reaches 0.969 mean ROC-AUC across 6 toxicity labels, versus 0.968 for the Logistic Regression baseline (110K TF-IDF features), with 62-87% recall after per-label threshold tuning. Tracked with MLflow and deployed on AWS EC2.',
         tags: ['BiLSTM', 'MLflow', 'FastText', 'AWS EC2'],
         github: 'https://github.com/vyash0048-bit/Toxic-Comment-Classifier'
     },
     {
         icon: 'fa-credit-card',
         title: 'Sentinel | Real-Time Fraud Detection',
-        description: 'End-to-end ML pipeline identifying fraudulent credit card transactions in real-time. Implements Kaggle 1st-place Magic Features with a tuned LightGBM classifier, served via FastAPI and tracked with DVC & MLflow.',
+        description: 'End-to-end ML pipeline identifying fraudulent credit card transactions in real time. Implements the Kaggle 1st-place Magic Features (47+ client UID aggregations) with a tuned, calibrated LightGBM classifier: 0.932 ROC-AUC, 66.8% precision, and 63.7% recall in the top-5% risk bin. Served via FastAPI and tracked with DVC & MLflow.',
         tags: ['LightGBM', 'FastAPI', 'DVC', 'MLflow'],
         github: 'https://github.com/vyash0048-bit/Fraud_Detection'
     },
     {
         icon: 'fa-wine-glass-alt',
         title: 'Wine Quality MLOps Pipeline',
-        description: 'Architected a modular end-to-end MLOps workflow orchestrating a 5-stage pipeline (Ingestion to Evaluation). Deployed a scalable Flask API for real-time inference.',
+        description: 'Architected a modular end-to-end MLOps workflow orchestrating a 5-stage pipeline (Ingestion to Evaluation). XGBoost classifier with SMOTE and robust scaling on 8 selected chemical features achieves 80.5% accuracy and 80.3% F1. Deployed as a Flask app with GitHub Actions CI/CD to Hugging Face Spaces.',
         tags: ['MLflow', 'DagsHub', 'Flask', 'HTML/CSS'],
         github: 'https://github.com/vyash0048-bit/Wine-quality-Prediction-using-ML-with-MLops'
     },
     {
         icon: 'fa-shield-alt',
         title: 'Cyber Intelligence Dashboard',
-        description: 'Engineered a high-performance visualization tool to monitor global data breach trends. Implemented complex callback logic for cross-filtering and state management.',
+        description: 'Engineered a high-performance visualization tool to monitor global data breach trends across 2 datasets (country-wise and company-wise). Four linked interactive views (top-target bars, attack-method treemap, sector sunburst, timeline with range slider) driven by callback logic for cross-filtering and state management.',
         tags: ['Dash', 'Plotly', 'Pandas', 'Visualization'],
         github: 'https://github.com/vyash0048-bit/Data-Beach-Dashboard-Using-Ploty-Dash'
     },
     {
         icon: 'fa-cogs',
         title: 'Modular Automated ML System',
-        description: 'Built an automated workflow script that runs data gathering, processing, and training sequentially. Implemented smart error tracking with custom logging.',
+        description: 'Built an automated 5-stage workflow (ingestion, validation, transformation, training, evaluation) that runs sequentially from YAML configs. Implemented smart error tracking with custom logging, plus MLflow/DagsHub experiment tracking and DVC data versioning with GitHub Actions CI/CD.',
         tags: ['Python', 'Automation', 'Error Tracking', 'MLOps'],
         github: 'https://github.com/vyash0048-bit/ML-project-with-complete-MLops-pipeline'
     }
